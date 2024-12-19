@@ -1,0 +1,165 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+h1 {
+  font-family: "Black Mango", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.166em;
+  font-size: 3em;
+  line-height: 1.2;
+  padding-inline-start: 2em;
+  padding-block: 0.5em;
+}
+
+h1 span {
+  font-weight: normal;
+  display: block;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.614em;
+  padding-block: 0.25em;
+  margin-block-end: 0.75em;
+  line-height: 1.4;
+}
+
+h2.double {
+  border-block: 1px solid black;
+  padding-inline-start: 2em;
+  margin-block-end: 1.25em;
+}
+
+h2.single {
+  border-block-end: 1px solid black;
+}
+
+h3 {
+  margin-block: 1em;
+}
+
+img {
+  max-width: 17em;
+  margin-inline: auto;
+  margin-block-end: 1em;
+}
+
+.title {
+  letter-spacing: 0.614em;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 1em 0.5em;
+  background-color: black;
+  color: white;
+  line-height: 1.4;
+}
+
+.info::after {
+  content: "";
+  margin-block-start: 1em;
+  display: block;
+  height: 1px;
+  background-color: black;
+}
+
+.about2 {
+  margin-block-end: 1.5em;
+}
+
+.two-col {
+  margin-block-end: 2em;
+}
+
+.two-col > div {
+  display: flex;
+  margin-block-end: 1em;
+}
+
+.two-col > div > p {
+  margin-inline-start: auto;
+}
+
+.education > div {
+  margin-block-end: 1em;
+}
+
+.education strong,
+.education em {
+  font-size: 1.25em;
+}
+
+.languages {
+  margin-block-start: 1em;
+}
+
+.languages ul {
+  font-weight: 800;
+  font-size: 1.25em;
+}
+
+.languages li {
+  margin-block: 0.75em;
+}
+
+@media screen and (min-width: 830px) {
+  main {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    grid-template-areas:
+      "title title . info info"
+      "strengths strengths about1 about1 about1"
+      "about2 about2 about2 about2 about2"
+      "background background background abilities abilities";
+    row-gap: 1em;
+    column-gap: 2em;
+  }
+
+  .title {
+    grid-area: title;
+  }
+
+  .info {
+    grid-area: info;
+    text-align: right;
+    align-self: end;
+  }
+
+  .info::after {
+    content: "";
+    margin-block-start: 1em;
+    display: block;
+    height: 1px;
+    width: 120%;
+    transform: translateX(-22%);
+    background-color: black;
+  }
+
+  .about1 {
+    grid-area: about1;
+  }
+
+  .about1 p:first-of-type {
+    text-align: center;
+    margin-block-end: 3em;
+  }
+
+  .about2 {
+    grid-area: about2;
+  }
+
+  .strengths {
+    grid-area: strengths;
+  }
+
+  .background {
+    grid-area: background;
+  }
+
+  .abilities {
+    grid-area: abilities;
+  }
+}
