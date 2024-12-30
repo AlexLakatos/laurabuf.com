@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './skill.component.css',
 })
 export class SkillComponent {
-  @Input() percentage;
-  @Input() label;
+  @Input() percentage: any;
+  @Input() label: any;
 }
