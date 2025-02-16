@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './skill.component.css',
 })
 export class SkillComponent {
-  @Input() percentage: any;
+  @Input() percentage: number = 0;
   @Input() label: string = '';
 }
